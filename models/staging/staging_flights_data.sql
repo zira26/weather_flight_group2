@@ -1,6 +1,6 @@
 WITH source AS (
     SELECT *
-    FROM {{ source('flights_data') }}
+    FROM {{ source('flights', 'flights_data') }}
 ),
 filtered AS (
     SELECT
