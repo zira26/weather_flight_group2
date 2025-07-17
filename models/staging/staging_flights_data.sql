@@ -3,26 +3,24 @@ WITH source AS (
     FROM {{ source('flights_data') }}
 ),
 filtered AS (
-
     SELECT
-        fl_date,
-        op_unique_carrier,
-        tail_num,
-        origin,
-        dest,
+        flight_date,
         dep_time,
+        sched_dep_time,
         dep_delay,
         arr_time,
+        sched_arr_time,
         arr_delay,
-        cancelled,
-        cancellation_code,
+        airline,
+        tail_number,
+        flight_number,
+        origin,
+        dest,
         air_time,
+        actual_elapsed_time,
         distance,
-        carrier_delay,
-        weather_delay,
-        nas_delay,
-        security_delay,
-        late_aircraft_delay
+        cancelled,
+        diverted
     FROM source
     WHERE origin IN ('ORD', 'DTW', 'DEN', 'JFK', 'ATL', 'LAX')
 )
