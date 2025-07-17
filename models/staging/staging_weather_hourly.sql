@@ -24,4 +24,4 @@ hourly_data AS (
     FROM weather_hourly_raw
 )
 SELECT * 
-FROM weather_hourly_data
+FROM weather_hourly_raw AS weather_hourly_data
