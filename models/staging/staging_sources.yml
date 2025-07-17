@@ -11,5 +11,5 @@ sources:
   schema: public
   tables:
     - name: flights
-    - name: airports
+    - name: selected_airports
     - name: regions
