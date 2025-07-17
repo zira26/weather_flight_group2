@@ -37,7 +37,6 @@ p.WIND_DIRECTION,
 p.WIND_SPEED_KMH,
 p.WIND_PEAKGUST_KMH,
 p.pressure_hpa,
-p.sun_minutes::Time as sun_time,
-p.condition_code,
+p.condition_code
 FROM {{ref('prep_weather_hourly')}} P
 JOIN total_stats t on t.faa = p.AIRPORT_CODE and t.FLIGHT_DATE = p.date
