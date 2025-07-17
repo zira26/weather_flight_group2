@@ -26,12 +26,18 @@ FROM departure d
 JOIN arrival a USING (faa,flight_date)
 )
 SELECT t.*,
-p.MIN_TEMP_C,
-p.MAX_TEMP_C,
+p.date,p.time,
+p.hour,p.month_name,p.weekday,p.date_day,p.date_month,p.date_year,p.cw,p.day_part,
+p.TEMP_C,
+p.dewpoint_c,
+p.humidity_perc,
 p.PRECIPITATION_MM,
-p.MAX_SNOW_MM,
-p.AVG_WIND_DIRECTION,
-p.AVG_WIND_SPEED_KMH,
-p.WIND_PEAKGUST_KMH
+p.SNOW_MM,
+p.WIND_DIRECTION,
+p.WIND_SPEED_KMH,
+p.WIND_PEAKGUST_KMH,
+p.pressure_hpa,
+p.sun_minutes::Time as sun_time,
+p.condition_code,
 FROM {{ref('prep_weather_hourly')}} P
 JOIN total_stats t on t.faa = p.AIRPORT_CODE and t.FLIGHT_DATE = p.date
