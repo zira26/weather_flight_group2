@@ -7,9 +7,9 @@ sources:
     - name: weather_daily_raw
     - name: weather_hourly_raw
 
-- name: flights_data
-  schema: public
+- name: flights
+  schema: g2_dbt_project
   tables:
-    - name: flights
+    - name: flights_data
     - name: selected_airports
     - name: regions
