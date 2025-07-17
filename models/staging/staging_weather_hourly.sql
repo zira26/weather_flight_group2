@@ -21,7 +21,7 @@ hourly_data AS (
             ,(json_data->>'pres')::NUMERIC AS pressure_hpa 
             ,(json_data->>'tsun')::INTEGER AS sun_minutes
             ,(json_data->>'coco')::INTEGER AS condition_code
-    FROM weather_hourly_raw
+    FROM hourly_raw
 )
 SELECT * 
-FROM weather_hourly_raw AS weather_hourly_data
+FROM hourly_data AS weather_hourly_data
