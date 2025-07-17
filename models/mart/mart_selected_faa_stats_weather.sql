@@ -26,7 +26,7 @@ FROM departure d
 JOIN arrival a USING (faa,flight_date)
 )
 SELECT t.*,
-p.date,p.time,
+p.date,p.time,p.timestamp,
 p.hour,p.month_name,p.weekday,p.date_day,p.date_month,p.date_year,p.cw,p.day_part,
 p.TEMP_C,
 p.dewpoint_c,
