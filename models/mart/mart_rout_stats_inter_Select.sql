@@ -1,4 +1,5 @@
 SELECT origin, p2.city AS origin_city, p2.country AS origin_country,
+p.FLIGHT_DATE, date_trunc('hour',p.SCHED_DEP_TIME) AS hour_of_sched_dep,
 dest, p3.city AS dest_city, p3.country AS dest_country, 
 count(*) AS total_planed_flights_on_rout,
 count(DISTINCT p.AIRLINE) AS unique_airlines_on_rout,
