@@ -13,3 +13,8 @@ sources:
     - name: flights_data
     - name: selected_airports
     - name: regions
+
+- name: other_airports
+  schema: public
+  tables:
+    - name: airports
